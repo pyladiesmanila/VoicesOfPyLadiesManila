@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maria's Journey - From Biology to Python | Voices of PyLadies Manila</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.7;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #EC407A 0%, #E91E63 100%);
+            color: white;
+            padding: 3rem 0 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(236, 64, 122, 0.2);
+        }
+        
+        .back-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+        
+        .back-link:hover {
+            opacity: 1;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+        }
+        
+        .story-meta {
+            font-size: 1.1rem;
+            font-weight: 300;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+        
+        .story-role {
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        
+        /* Main Content */
+        main {
+            background: white;
+            margin: -2rem auto 3rem auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .story-content {
+            padding: 3rem;
+        }
+        
+        /* Hero Image */
+        .hero-image {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        
+        .profile-image {
+            width: 100%;
+            max-width: 400px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            margin-bottom: 1rem;
+        }
+        
+        .image-caption {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        /* Audio Section */
+        .audio-section {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .audio-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #EC407A;
+            margin-bottom: 1rem;
+        }
+        
+        .audio-player {
+            width: 100%;
+            max-width: 500px;
+            height: 60px;
+            margin-bottom: 1rem;
+            border-radius: 30px;
+            background: linear-gradient(135deg, #EC407A, #E91E63);
+        }
+        
+        .audio-description {
+            font-size: 0.95rem;
+            color: #666;
+            font-style: italic;
+        }
+        
+        /* Story Content */
+        .story-intro {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+        
+        .transcript-section h2 {
+            font-size: 1.8rem;
+            color: #EC407A;
+            margin: 2.5rem 0 1.5rem 0;
+            font-weight: 700;
+        }
+        
+        .transcript {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-left: 4px solid #EC407A;
+            border-radius: 0 8px 8px 0;
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 2rem;
+        }
+        
+        .transcript p {
+            margin-bottom: 1rem;
+        }
+        
+        .transcript p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .quote-highlight {
+            background: rgba(236, 64, 122, 0.1);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        
+        /* Key Insights */
+        .insights {
+            background: linear-gradient(135deg, rgba(236, 64, 122, 0.05), rgba(233, 30, 99, 0.05));
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+        
+        .insights h3 {
+            font-size: 1.4rem;
+            color: #EC407A;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .insights ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .insights li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .insights li::before {
+            content: "✨";
+            position: absolute;
+            left: 0;
+            color: #EC407A;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 0;
+        }
+        
+        .footer-nav {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-nav a {
+            color: #EC407A;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: 500;
+        }
+        
+        .footer-nav a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .story-content {
+                padding: 2rem 1.5rem;
+            }
+            
+            .back-link {
+                position: relative;
+                top: auto;
+                left: auto;
+                display: inline-block;
+                margin-bottom: 1rem;
+            }
+            
+            .profile-image {
+                max-width: 100%;
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="back-link">← Back to All Stories</a>
+        <div class="container">
+            <p class="story-meta">Voices of PyLadies Manila</p>
+            <h1>From Biology Lab to Code</h1>
+            <div class="story-role">Maria Santos • Senior Python Developer</div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="story-content">
+                <div class="audio-section">
+                    <h3 class="audio-title">🎧 Listen to Maria's Story</h3>
+                    <audio controls class="audio-player">
+                        <source src="maria-santos-story.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <p class="audio-description">Duration: 12 minutes • Recorded December 2023</p>
+                </div>
+                
+                <div class="hero-image">
+                    <img src="maria-santos-profile.jpg" alt="Maria Santos, Senior Python Developer, sitting at her desk with code on her computer screen" class="profile-image">
+                    <div class="image-caption">Maria Santos in her home office, where she now mentors other aspiring developers</div>
+                </div>
+                
+                <p class="story-intro">
+                    Meet Maria Santos, a Senior Python Developer who made an incredible journey from studying biology to becoming one of Manila's most respected Python developers. Her story is one of courage, persistence, and the power of community support in overcoming imposter syndrome.
+                </p>
+                
+                <div class="insights">
+                    <h3>Key Takeaways from Maria's Journey</h3>
+                    <ul>
+                        <li>Career transitions are possible at any stage of life</li>
+                        <li>Community support is crucial for overcoming self-doubt</li>
+                        <li>Your unique background brings valuable perspectives to tech</li>
+                        <li>Imposter syndrome affects everyone, even senior developers</li>
+                    </ul>
+                </div>
+                
+                <section class="transcript-section">
+                    <h2>Full Transcript</h2>
+                    <div class="transcript">
+                        <p><strong>Interviewer:</strong> Maria, thank you for joining us today. Can you start by telling us about your background before you got into programming?</p>
+                        
+                        <p><strong>Maria:</strong> Of course! I actually have a degree in Biology from UP Diliman. I was working in a research lab for about three years, doing mainly data analysis on environmental samples. <span class="quote-highlight">I kept finding myself more excited about analyzing the data than collecting it</span>, and that's when I realized I might be more suited for a different path.</p>
+                        
+                        <p><strong>Interviewer:</strong> That's fascinating. How did you make the transition from biology to programming?</p>
+                        
+                        <p><strong>Maria:</strong> It wasn't easy, I'll be honest. I started learning Python on my own because it was being used in the lab for some of our data analysis. I was amazed by how powerful it was – I could automate tasks that were taking me hours to do manually. <span class="quote-highlight">Python felt like magic at first. I remember the first time I wrote a script that processed hundreds of data files in seconds instead of the days it used to take me.</span></p>
+                        
+                        <p><strong>Interviewer:</strong> When did you decide to make programming your full-time career?</p>
+                        
+                        <p><strong>Maria:</strong> That decision took about a year of night classes and weekend coding. I was terrified, honestly. Here I was, a biology graduate trying to break into tech. <span class="quote-highlight">The imposter syndrome was real – I felt like everyone would immediately know I didn't belong</span>. But I had built up a small portfolio of data analysis projects, and I decided to take the leap.</p>
+                        
+                        <p><strong>Interviewer:</strong> How did you find your first programming job?</p>
+                        
+                        <p><strong>Maria:</strong> I applied to dozens of junior developer positions. Most didn't even respond, which was discouraging. But eventually, I found a small startup that was looking for someone who could work with scientific data. My biology background actually became an asset there – I understood the domain they were working in. That first job taught me so much about web development, APIs, and working in a team.</p>
+                        
+                        <p><strong>Interviewer:</strong> Tell us about finding the PyLadies Manila community.</p>
+                        
+                        <p><strong>Maria:</strong> Oh, PyLadies Manila changed everything for me! I discovered them about six months into my first programming job. I was still struggling with that feeling of not being a "real" programmer. <span class="quote-highlight">Walking into my first PyLadies meetup, I was nervous, but everyone was so welcoming. I realized I wasn't alone in feeling like an outsider sometimes</span>.</p>
+                        
+                        <p><strong>Interviewer:</strong> How has the community helped you grow?</p>
+                        
+                        <p><strong>Maria:</strong> In so many ways! The technical workshops helped me learn new skills, but more importantly, seeing other women who had made similar career transitions gave me confidence. I started mentoring newer members, which actually helped solidify my own knowledge. <span class="quote-highlight">Teaching others made me realize how much I had actually learned – it was like proof that I really did belong in tech</span>.</p>
+                        
+                        <p><strong>Interviewer:</strong> What advice would you give to someone considering a similar career change?</p>
+                        
+                        <p><strong>Maria:</strong> First, don't let anyone tell you that you're too old or that it's too late to change careers. I started learning programming seriously when I was 28, and I'm now 32 and loving what I do. Second, <span class="quote-highlight">your previous experience isn't wasted – it's actually your superpower. My biology background helps me approach problems differently, and that's valuable</span>. Finally, find your community. Whether it's PyLadies or another group, having support makes all the difference.</p>
+                        
+                        <p><strong>Interviewer:</strong> Any final thoughts for our listeners?</p>
+                        
+                        <p><strong>Maria:</strong> Just that <span class="quote-highlight">imposter syndrome never fully goes away, but it does get quieter. Even now, as a senior developer, I sometimes feel like I'm figuring things out as I go. But that's actually normal – technology changes so fast that we're all constantly learning</span>. The key is to embrace that continuous learning and remember that your unique journey is what makes you valuable to any team.</p>
+                    </div>
+                </section>
+                
+                <div class="insights">
+                    <h3>Resources Mentioned</h3>
+                    <ul>
+                        <li>PyLadies Manila meetups and workshops</li>
+                        <li>Online Python courses for beginners</li>
+                        <li>Building a portfolio with real-world projects</li>
+                        <li>Mentorship opportunities within the community</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-nav">
+                <a href="#">All Stories</a>
+                <a href="#">About PyLadies Manila</a>
+                <a href="#">Get Involved</a>
+            </div>
+            <p>Voices of PyLadies Manila</p>
+            <p>Celebrating the journeys of women in Python development</p>
+            <p>© 2023 PyLadies Manila</p>
+        </div>
+    </footer>
+</body>
+</html>
