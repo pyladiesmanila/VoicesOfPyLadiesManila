@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voices of PyLadies Manila</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #EC407A;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            font-weight: 300;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Main Content */
+        main {
+            padding: 3rem 0;
+        }
+        
+        .intro {
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .intro h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #EC407A;
+        }
+        
+        .intro p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+        
+        /* Story Grid */
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .story-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .story-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+        
+        .story-header {
+            background-color: #EC407A;
+            color: white;
+            padding: 1.5rem;
+        }
+        
+        .story-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .story-role {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        .audio-section {
+            padding: 1.5rem;
+        }
+        
+        .audio-player {
+            width: 100%;
+            height: 50px;
+            background: #f5f5f5;
+            border-radius: 25px;
+            margin-bottom: 1rem;
+        }
+        
+        .story-description {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .stories-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .intro h2 {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Voices of PyLadies Manila</h1>
+            <p class="tagline">Inspiring stories from women Python developers in Manila</p>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <section class="intro">
+                <h2>Journeys in Code</h2>
+                <p>A web app showcasing the journeys of PyLadies Manila members, from their early days learning programming to their growth as experienced Python developers. This platform features audio clips of inspiring stories from Manila women Python devs of all ages and backgrounds, highlighting their experiences, challenges, and achievements in the Python community.</p>
+            </section>
+            
+            <section class="stories-grid">
+                <!-- Story 1 -->
+                <article class="story-card">
+                    <div class="story-header">
+                        <h3 class="story-name">Maria Santos</h3>
+                        <p class="story-role">Senior Python Developer</p>
+                    </div>
+                    <div class="audio-section">
+                        <audio controls class="audio-player">
+                            <source src="#" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <p class="story-description">Maria shares her journey from being a biology graduate to becoming a senior Python developer, overcoming imposter syndrome along the way.</p>
+                    </div>
+                </article>
+                
+                <!-- Story 2 -->
+                <article class="story-card">
+                    <div class="story-header">
+                        <h3 class="story-name">Andrea Reyes</h3>
+                        <p class="story-role">Data Scientist</p>
+                    </div>
+                    <div class="audio-section">
+                        <audio controls class="audio-player">
+                            <source src="#" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <p class="story-description">Andrea discusses how she transitioned from academia to industry and found her passion for data science using Python.</p>
+                    </div>
+                </article>
+                
+                <!-- Story 3 -->
+                <article class="story-card">
+                    <div class="story-header">
+                        <h3 class="story-name">Isabel Cruz</h3>
+                        <p class="story-role">Backend Engineer</p>
+                    </div>
+                    <div class="audio-section">
+                        <audio controls class="audio-player">
+                            <source src="#" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <p class="story-description">Isabel talks about her experience as one of the few women in her engineering team and how she found support in the PyLadies community.</p>
+                    </div>
+                </article>
+                
+                <!-- Story 4 -->
+                <article class="story-card">
+                    <div class="story-header">
+                        <h3 class="story-name">Sofia Lim</h3>
+                        <p class="story-role">Python Instructor</p>
+                    </div>
+                    <div class="audio-section">
+                        <audio controls class="audio-player">
+                            <source src="#" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <p class="story-description">Sofia shares how she went from learning Python basics to teaching it to hundreds of students across Manila.</p>
+                    </div>
+                </article>
+                
+                <!-- Story 5 -->
+                <article class="story-card">
+                    <div class="story-header">
+                        <h3 class="story-name">Carmen Dela Cruz</h3>
+                        <p class="story-role">DevOps Engineer</p>
+                    </div>
+                    <div class="audio-section">
+                        <audio controls class="audio-player">
+                            <source src="#" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <p class="story-description">Carmen discusses her unconventional path into tech and how Python became her gateway to a successful DevOps career.</p>
+                    </div>
+                </article>
+                
+                <!-- Story 6 -->
+                <article class="story-card">
+                    <div class="story-header">
+                        <h3 class="story-name">Elena Torres</h3>
+                        <p class="story-role">Machine Learning Engineer</p>
+                    </div>
+                    <div class="audio-section">
+                        <audio controls class="audio-player">
+                            <source src="#" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <p class="story-description">Elena shares her experience working on cutting-edge ML projects and how the PyLadies community helped her grow professionally.</p>
+                    </div>
+                </article>
+            </section>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>Voices of PyLadies Manila</p>
+            <p>Celebrating the journeys of women in Python development</p>
+            <p>© 2023 PyLadies Manila</p>
+        </div>
+    </footer>
+</body>
+</html>
