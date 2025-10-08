@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voices of PyLadies Manila | Women in Python Development</title>
+    <title>{{title}}</title>
     <!-- Load Inter font from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -45,30 +45,19 @@
 <body class="antialiased">
 
     <!-- Header / Navigation -->
-    <header class="sticky top-0 z-50 bg-white shadow-md">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-extrabold text-gray-800 tracking-tight">
-                <span class="text-[--secondary-purple]">PyLadies</span> Manila
-            </a>
-            <nav class="space-x-4">
-                <a href="#about" class="text-gray-600 hover:text-[--secondary-purple] font-medium transition duration-150">About</a>
-                <a href="#stories" class="text-gray-600 hover:text-[--secondary-purple] font-medium transition duration-150">Stories</a>
-                <a href="#contribute" class="text-gray-600 hover:text-[--secondary-purple] font-medium transition duration-150">Contribute</a>
-            </nav>
-        </div>
-    </header>
+    {{header | safe}}
 
     <!-- Hero Section -->
     <section id="hero" class="bg-[--primary-pink] text-white py-24 md:py-32">
         <div class="container mx-auto px-6 text-center">
             <h1 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight">
-                Voices of PyLadies Manila
+                {{ hero.h1 }}
             </h1>
             <h2 class="text-2xl md:text-3xl font-light mb-8 max-w-3xl mx-auto">
-                A web app showcasing the journeys of PyLadies Manila members, from their early days learning programming to their growth as experienced Python developers.
+                {{ hero.h2 }}
             </h2>
             <p class="text-xl font-medium mb-10 text-gray-100">
-                Hear the inspiring stories, challenges, and achievements of Manila's women Python developers.
+                {{ hero.p }}
             </p>
             <a href="#stories" class="cta-button inline-block bg-[--secondary-purple] text-white px-10 py-4 rounded-full text-lg font-bold shadow-lg hover:shadow-xl hover:scale-[1.02] transform duration-300">
                 Listen to the Stories &rarr;
@@ -80,20 +69,20 @@
     <section id="about" class="py-20 md:py-28">
         <div class="container mx-auto px-6 max-w-4xl text-left">
             <h2 class="text-4xl font-bold text-center mb-10 text-[--secondary-purple]">
-                Our Mission
+                {{ project.h2 }}
             </h2>
             <div class="bg-white p-8 rounded-xl story-card">
                 <p class="text-lg text-gray-700 mb-6">
-                    Voices of PyLadies Manila is dedicated to documenting women's experiences getting into programming and Python development in Manila. The website serves as a collection of everyone's personal stories and experiences, sharing the unique journeys of women from the time they learned programming, how they built their Python development skills, and what they are currently doing with Python today.
+                    {{ project.p1 }}
                 </p>
                 <p class="text-lg text-gray-700 mb-6">
-                    Each audio clip represents a personal narrative of growth, challenges, and success in the tech field.
+                    {{ project.p2 }}
                 </p>
                 <h3 class="text-2xl font-semibold text-[--primary-pink] mt-8 mb-4">
-                    The Collaborative Goal
+                    {{ project.h3 }}
                 </h3>
                 <p class="text-lg text-gray-700">
-                    This project also exists to give us something fresh to collaborate on together, helping each other build our open-source contribution portfolio and skills. Join us in making this platform a vibrant hub of shared knowledge and achievement!
+                    {{ project.p3 }}
                 </p>
             </div>
         </div>
@@ -106,63 +95,22 @@
                 Featured Journeys
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-                <!-- Mock Story Card 1 -->
+    
+                {% for story in stories %}
                 <div class="story-card p-6 rounded-xl border border-gray-100 bg-white">
                     <div class="flex items-center space-x-4 mb-4">
-                        <span class="text-3xl text-[--primary-pink]">
-                            &#128105;
-                        </span>
+                        <span class="text-3xl text-[--primary-pink]">&#128105;</span>
                         <h3 class="text-xl font-semibold text-gray-800">
-                            The Career Switch: From Arts to Code
-                        </h3>
+                            {{ story.title }}  </h3>
                     </div>
                     <p class="text-gray-600 mb-4">
-                        [Placeholder: This story details the transition from a non-technical field into backend Python development, highlighting initial hurdles and finding PyLadies Manila.]
-                    </p>
+                        {{ story.description }}  </p>
                     <button onclick="alert('Playback functionality is under development! Stay tuned for the audio library.')" class="w-full py-2 bg-[--secondary-purple] text-white rounded-lg font-medium hover:bg-opacity-90">
                         &#9658; Listen to Audio
                     </button>
                 </div>
-
-                <!-- Mock Story Card 2 -->
-                <div class="story-card p-6 rounded-xl border border-gray-100 bg-white">
-                    <div class="flex items-center space-x-4 mb-4">
-                        <span class="text-3xl text-[--primary-pink]">
-                            &#128105;
-                        </span>
-                        <h3 class="text-xl font-semibold text-gray-800">
-                            Scaling Up: Mastering Django and DevOps
-                        </h3>
-                    </div>
-                    <p class="text-gray-600 mb-4">
-                        [Placeholder: Hear about building complex applications using Python frameworks and navigating the challenges of technical leadership in a fast-paced environment.]
-                    </p>
-                    <button onclick="alert('Playback functionality is under development! Stay tuned for the audio library.')" class="w-full py-2 bg-[--secondary-purple] text-white rounded-lg font-medium hover:bg-opacity-90">
-                        &#9658; Listen to Audio
-                    </button>
+                {% endfor %}
                 </div>
-
-                <!-- Mock Story Card 3 -->
-                <div class="story-card p-6 rounded-xl border border-gray-100 bg-white">
-                    <div class="flex items-center space-x-4 mb-4">
-                        <span class="text-3xl text-[--primary-pink]">
-                            &#128105;
-                        </span>
-                        <h3 class="text-xl font-semibold text-gray-800">
-                            First Open Source Contribution: The PyLadies Project
-                        </h3>
-                    </div>
-                    <p class="text-gray-600 mb-4">
-                        [Placeholder: A story focused on a beginner developer's fear of contributing and how working on a community project built confidence and skill.]
-                    </p>
-                    <button onclick="alert('Playback functionality is under development! Stay tuned for the audio library.')" class="w-full py-2 bg-[--secondary-purple] text-white rounded-lg font-medium hover:bg-opacity-90">
-                        &#9658; Listen to Audio
-                    </button>
-                </div>
-
-            </div>
-            <!-- Note: The audio buttons use a simple message box instead of alert() for compliance. -->
         </div>
     </section>
 
@@ -170,19 +118,19 @@
     <section id="contribute" class="py-20 md:py-28 bg-[--primary-pink]">
         <div class="container mx-auto px-6 text-center text-white">
             <h2 class="text-4xl font-bold mb-6">
-                Contribute and Grow
+                {{ contribution.h2 }}
             </h2>
             <p class="text-xl font-light mb-10 max-w-3xl mx-auto">
-                This project is built by the community, for the community. We welcome developers of all skill levels to help us build our open-source contribution portfolio and skills.
+                {{ contribution.p }}
             </p>
-            <a href="[LINK_TO_GITHUB_REPO_OR_CONTRIBUTING_GUIDE]" class="cta-button inline-block bg-[--secondary-purple] text-white px-10 py-4 rounded-full text-lg font-bold shadow-xl hover:shadow-2xl hover:bg-opacity-90 transform duration-300">
-                Join the Development Team
+            <a href="https://github.com/pyladiesmanila/VoicesOfPyLadiesManila" class="cta-button inline-block bg-[--secondary-purple] text-white px-10 py-4 rounded-full text-lg font-bold shadow-xl hover:shadow-2xl hover:bg-opacity-90 transform duration-300">
+                {{ contribution.a }}
             </a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
+    <!-- <footer class="bg-gray-800 text-white py-8">
         <div class="container mx-auto px-6 text-center">
             <p class="mb-4">Voices of PyLadies Manila - Powered by the Python Community</p>
             <div class="text-sm space-x-4">
@@ -191,7 +139,8 @@
                 <a href="[LINK_TO_TERMS]" class="text-gray-400 hover:text-[--primary-pink] transition duration-150">Terms</a>
             </div>
         </div>
-    </footer>
+    </footer> -->
+    {{ footer | safe }}
 
     <!-- Simple message box function as a replacement for alert() -->
     <script>
